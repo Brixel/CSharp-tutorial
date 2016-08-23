@@ -10,10 +10,18 @@ namespace FirstConsoleApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your name:");
-            var name = Console.ReadLine();
+            var name = AskQuestion("What is your name?");
             Console.WriteLine($"Hello world: {name}");
+            var age = AskQuestion("What is your age?");
+            Console.WriteLine($"Your age: {age}");
             Console.ReadLine();
+        }
+
+        private static string AskQuestion(string question)
+        {
+            Console.WriteLine(question);
+            var response = Console.ReadLine();
+            return response;
         }
     }
 }
