@@ -11,10 +11,12 @@ namespace FirstConsoleApplication
         static void Main(string[] args)
         {
             Console.WriteLine("Hello world");
-            string output = "Debugger";
+            var replaceable = "ger";
+            string output = $"Debug{replaceable}";
             Console.WriteLine(output);
-            var replacedOutput = output.Replace("ger", " me");
-            Console.WriteLine(replacedOutput);
+            replaceable = " me";
+            output = $"Debug{replaceable}";
+            Console.WriteLine(output);
             Console.ReadLine();
         }
     }
