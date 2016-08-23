@@ -11,7 +11,12 @@ namespace FirstConsoleApplication
         static void Main(string[] args)
         {
             Console.WriteLine("Hello world");
-            Console.WriteLine("Debugger");
+            string output = "Debugger";
+            int substringIndex = 5;
+            Console.WriteLine(output);
+            Console.WriteLine(output.ToUpper());
+            var strippedPart = output.Substring(substringIndex);
+            Console.WriteLine(strippedPart);
             Console.ReadLine();
         }
     }
