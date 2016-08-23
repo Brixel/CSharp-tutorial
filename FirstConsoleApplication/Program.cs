@@ -12,11 +12,9 @@ namespace FirstConsoleApplication
         {
             Console.WriteLine("Hello world");
             string output = "Debugger";
-            int substringIndex = 5;
             Console.WriteLine(output);
-            Console.WriteLine(output.ToUpper());
-            var strippedPart = output.Substring(substringIndex);
-            Console.WriteLine(strippedPart);
+            var replacedOutput = output.Replace("ger", " me");
+            Console.WriteLine(replacedOutput);
             Console.ReadLine();
         }
     }
