@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +15,23 @@ namespace FirstConsoleApplication
             Console.WriteLine($"Hello world: {name}");
             //var age = AskQuestion("What is your age?");
             var dateOfBirthString = AskQuestion("When were you born?");
-            var age = CalculateAge(dateOfBirthString);
-            Console.WriteLine($"Your age: {age}");
+            var dateOfBirth = DateTime.Parse(dateOfBirthString);
+            var age = CalculateAge(dateOfBirth);
+            var person = new Person()
+            {
+                Name = name,
+                BirthDate = dateOfBirth
+            };
+            Console.WriteLine($"If you were born on {person.BirthDate.Day} {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(person.BirthDate.Month)} {person.BirthDate.Year}, that means you must be {age} now");
             Console.ReadLine();
         }
 
-        private static int CalculateAge(string dateOfBirthString)
+        private static int CalculateAge(DateTime date)
         {
-            var dateOfBirth = DateTime.Parse(dateOfBirthString);
+            
             var dateNow = DateTime.Now;
-            int age = dateNow.Year - dateOfBirth.Year;
-            if (dateOfBirth > dateNow.AddYears(-age))
+            int age = dateNow.Year - date.Year;
+            if (date > dateNow.AddYears(-age))
                 age--;
             return age;
         }
