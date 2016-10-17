@@ -13,7 +13,6 @@ namespace FirstConsoleApplication
         {
             var name = AskQuestion("What is your name?");
             Console.WriteLine($"Hello world: {name}");
-            //var age = AskQuestion("What is your age?");
             var dateOfBirthString = AskQuestion("When were you born?");
             var dateOfBirth = DateTime.Parse(dateOfBirthString);
             var age = CalculateAge(dateOfBirth);
