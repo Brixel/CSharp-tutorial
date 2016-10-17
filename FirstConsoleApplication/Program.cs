@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstConsoleApplication.Model;
 
 namespace FirstConsoleApplication
 {
@@ -15,7 +16,7 @@ namespace FirstConsoleApplication
             Console.WriteLine($"Hello world: {name}");
             var dateOfBirthString = AskQuestion("When were you born?");
             var dateOfBirth = DateTime.Parse(dateOfBirthString);
-            var age = CalculateAge(dateOfBirth);
+            var age = Person.CalculateAge(dateOfBirth);
             var person = new Person()
             {
                 Name = name,
@@ -25,15 +26,7 @@ namespace FirstConsoleApplication
             Console.ReadLine();
         }
 
-        private static int CalculateAge(DateTime date)
-        {
-            
-            var dateNow = DateTime.Now;
-            int age = dateNow.Year - date.Year;
-            if (date > dateNow.AddYears(-age))
-                age--;
-            return age;
-        }
+        
 
         private static string AskQuestion(string question)
         {
