@@ -27,4 +27,14 @@ namespace FirstConsoleApplication.Model
             return age;
         }
     }
+
+    public class Female : Person
+    {
+        
+    }
+
+    public class Male : Person
+    {
+        
+    }
 }
