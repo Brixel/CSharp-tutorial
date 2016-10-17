@@ -16,16 +16,14 @@ namespace FirstConsoleApplication
             Console.WriteLine($"Hello world: {name}");
             var dateOfBirthString = AskQuestion("When were you born?");
             var dateOfBirth = DateTime.Parse(dateOfBirthString);
-            var age = Person.CalculateAge(dateOfBirth);
             var person = new Person()
             {
                 Name = name,
                 BirthDate = dateOfBirth
             };
-            Console.WriteLine($"If you were born on {person.BirthDate.Day} {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(person.BirthDate.Month)} {person.BirthDate.Year}, that means you must be {age} now");
+            Console.WriteLine($"If you were born on {person.FullBirthDate}, that means you must be {person.Age} now");
             Console.ReadLine();
         }
-
         
 
         private static string AskQuestion(string question)
