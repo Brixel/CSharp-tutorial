@@ -6,10 +6,6 @@ namespace Tutorial.Model
 {
     public abstract class Person
     {
-        protected Person()
-        {
-        }
-
         public DateTime BirthDate { get; set; }
         public string Name { get; set; }
 
