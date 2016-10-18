@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Globalization;
-using FirstConsoleApplication.Helper;
+using Tutorial.Helper;
 
-namespace FirstConsoleApplication.Model
+namespace Tutorial.Model
 {
     public abstract class Person
     {

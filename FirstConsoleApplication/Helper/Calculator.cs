@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FirstConsoleApplication.Helper
+namespace Tutorial.Helper
 {
     public class Calculator
     {

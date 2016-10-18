@@ -7,8 +7,8 @@
     <ProjectGuid>{95D4D76B-F8B3-4AB4-830F-4882779119D4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FirstConsoleApplication</RootNamespace>
-    <AssemblyName>FirstConsoleApplication</AssemblyName>
+    <RootNamespace>Tutorial</RootNamespace>
+    <AssemblyName>Tutorial</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
