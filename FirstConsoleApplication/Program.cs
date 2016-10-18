@@ -31,7 +31,6 @@ namespace FirstConsoleApplication
                         sex = AskQuestion("What is your sex? (m/v)");
                         break;
                 }
-
             }
             var dateOfBirth = DateTime.Parse(dateOfBirthString);
             person.Name = name;

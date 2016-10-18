@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Globalization;
+using FirstConsoleApplication.Helper;
 
 namespace FirstConsoleApplication.Model
 {
-    public class Person
+    public abstract class Person
     {
-        public Person()
+        protected Person()
         {
         }
 
@@ -17,24 +18,26 @@ namespace FirstConsoleApplication.Model
                                                      BirthDate.Year);
 
         public int Age => CalculateAge();
-
-        private int CalculateAge()
-        {
-            var dateNow = DateTime.Now;
-            var age = dateNow.Year - BirthDate.Year;
-            if (BirthDate > dateNow.AddYears(-age))
-                age--;
-            return age;
-        }
+        protected abstract int CalculateAge();
+        
     }
 
     public class Female : Person
     {
         
+        protected override int CalculateAge()
+        {
+            var age = Calculator.GetAge(BirthDate);
+            return --age;
+        }
     }
 
     public class Male : Person
     {
-        
+        protected override int CalculateAge()
+        {
+            var age = Calculator.GetAge(BirthDate);
+            return age;
+        }
     }
 }
