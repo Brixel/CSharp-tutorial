@@ -1,7 +1,7 @@
 ﻿using System;
-using Tutorial.Model;
+using FirstConsoleApplication.Model;
 
-namespace Tutorial
+namespace FirstConsoleApplication
 {
     class Program
     {
