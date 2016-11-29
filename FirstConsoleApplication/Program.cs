@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FirstConsoleApplication.Model;
 
 namespace FirstConsoleApplication
 {
@@ -12,22 +9,32 @@ namespace FirstConsoleApplication
         {
             var name = AskQuestion("What is your name?");
             Console.WriteLine($"Hello world: {name}");
-            //var age = AskQuestion("What is your age?");
             var dateOfBirthString = AskQuestion("When were you born?");
-            var age = CalculateAge(dateOfBirthString);
-            Console.WriteLine($"Your age: {age}");
+            string sex = AskQuestion("What is your sex? (m/v)");
+            Human human = null;
+            while (human == null)
+            {
+                switch (sex)
+                {
+                    case "m":
+                        human = new Male();
+                        break;
+                    case "v":
+                        human = new Female();
+                        break;
+                    default:
+                        sex = AskQuestion("What is your sex? (m/v)");
+                        break;
+                }
+            }
+            var dateOfBirth = DateTime.Parse(dateOfBirthString);
+            human.Name = name;
+            human.BirthDate = dateOfBirth;
+            Console.WriteLine($"If you were born on {human.FullBirthDate}, that means you must be {human.Age} now");
+            human.SayBirthDayMessage();
             Console.ReadLine();
         }
-
-        private static int CalculateAge(string dateOfBirthString)
-        {
-            var dateOfBirth = DateTime.Parse(dateOfBirthString);
-            var dateNow = DateTime.Now;
-            int age = dateNow.Year - dateOfBirth.Year;
-            if (dateOfBirth > dateNow.AddYears(-age))
-                age--;
-            return age;
-        }
+        
 
         private static string AskQuestion(string question)
         {
