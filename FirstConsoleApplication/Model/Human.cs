@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using Tutorial.Helper;
+using FirstConsoleApplication.Helper;
 
 namespace FirstConsoleApplication.Model
 {
